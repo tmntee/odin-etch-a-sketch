@@ -1,0 +1,9 @@
+div#grid-row{
+    display: flex;
+}
+
+div#grid-div {
+    background-color: pink;
+    width: 16px;
+    height: 16px;
+}
