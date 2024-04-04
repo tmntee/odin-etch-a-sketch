@@ -14,6 +14,7 @@ for (let j = 0; j < 16; j++)
     {
         let tempDiv = document.createElement('div');
         tempDiv.id = 'grid-div';
+        tempDiv.addEventListener('mouseover', func = () => {tempDiv.style.backgroundColor = "purple"});
 
         containerRows[j].appendChild(tempDiv);
     }
