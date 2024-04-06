@@ -82,8 +82,22 @@ wackadooModeBtn.addEventListener('click', func = () =>
 
             let rgbString = `rgb(${r}, ${g}, ${b})`;
             changePaintColor(tempDiv, rgbString);
+        })
+        }
+    }
+})
 
+const normalModeBtn = document.querySelector("button#normal-mode");
 
+normalModeBtn.addEventListener('click', func = () => {
+    for(let i = 0; i < grid.children.length; i++)
+    {  
+        for (let j = 0; j < grid.children.item(i).children.length; j++)
+        {   
+            let tempDiv = grid.children.item(i).children.item(j);
+            tempDiv.addEventListener('mouseover', func = () => 
+        {
+            changePaintColor(tempDiv, "purple");
         })
         }
     }
