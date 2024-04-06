@@ -69,9 +69,10 @@ const wackadooModeBtn = document.querySelector("button#wackadoo");
 wackadooModeBtn.addEventListener('click', func = () => 
 {
     for(let i = 0; i < grid.children.length; i++)
-    {
-        for (let j = 0; j < grid.children.item(i).length; j++)
-        {
+    {  
+        for (let j = 0; j < grid.children.item(i).children.length; j++)
+        {   
+            
             let tempDiv = grid.children.item(i).children.item(j);
             tempDiv.addEventListener('mouseover', func = () => 
         {
@@ -80,6 +81,8 @@ wackadooModeBtn.addEventListener('click', func = () =>
             let b = rollRandomNumber(255);
 
             console.log("hello");
+
+
         })
         }
     }
