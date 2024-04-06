@@ -68,39 +68,31 @@ const wackadooModeBtn = document.querySelector("button#wackadoo");
 
 wackadooModeBtn.addEventListener('click', func = () => 
 {
-    for(let i = 0; i < grid.children.length; i++)
-    {  
-        for (let j = 0; j < grid.children.item(i).children.length; j++)
-        {   
-            
-            let tempDiv = grid.children.item(i).children.item(j);
-            tempDiv.addEventListener('mouseover', func = () => 
+    let gridBoxes = document.querySelectorAll("#grid-div");
+    gridBoxes.forEach(func = (gridBox) => {
+        gridBox.addEventListener('mouseover', func = () => 
         {
             let r = rollRandomNumber(255);
             let g = rollRandomNumber(255);
             let b = rollRandomNumber(255);
 
             let rgbString = `rgb(${r}, ${g}, ${b})`;
-            changePaintColor(tempDiv, rgbString);
+            changePaintColor(gridBox, rgbString);
         })
-        }
-    }
+    })
 })
 
 const normalModeBtn = document.querySelector("button#normal-mode");
 
 normalModeBtn.addEventListener('click', func = () => {
-    for(let i = 0; i < grid.children.length; i++)
-    {  
-        for (let j = 0; j < grid.children.item(i).children.length; j++)
-        {   
-            let tempDiv = grid.children.item(i).children.item(j);
-            tempDiv.addEventListener('mouseover', func = () => 
+
+    let gridBoxes = document.querySelectorAll("#grid-div");
+    gridBoxes.forEach(func = (gridBox) => {
+        gridBox.addEventListener('mouseover', func = () => 
         {
-            changePaintColor(tempDiv, "purple");
+            changePaintColor(gridBox, "purple");
         })
-        }
-    }
+    })
 })
 
 const clearButton = document.querySelector("button#clear-button");
