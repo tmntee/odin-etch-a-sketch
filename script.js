@@ -1,4 +1,4 @@
-const container = document.querySelector("div#container");
+const grid = document.querySelector("div#grid");
 
 let gridWidth = 512;
 let gridSize = 16;
@@ -6,15 +6,15 @@ let gridSize = 16;
 
 function generateGrid(size)
 {   
-    const containerRows = [];
-    
+    const gridRows = [];
+
     for (let j = 0; j < size; j++)
     {   
         const tempRow = document.createElement("div");
         tempRow.id = "grid-row";
-        containerRows.push(tempRow);
+        gridRows.push(tempRow);
 
-        container.appendChild(tempRow);
+        grid.appendChild(tempRow);
 
         for (let i = 0; i < size; i++)
         {
@@ -26,16 +26,16 @@ function generateGrid(size)
             tempDiv.style.height = divSizeString;
             tempDiv.addEventListener('mouseover', func = () => {tempDiv.style.backgroundColor = "purple"});
 
-            containerRows[j].appendChild(tempDiv);
+            gridRows[j].appendChild(tempDiv);
         }
     }
 }
 
 function clearGrid()
 {
-    while (container.firstChild)
+    while (grid.firstChild)
     {
-        container.removeChild(container.firstChild);
+        grid.removeChild(grid.firstChild);
     }
 }
 

@@ -1,7 +1,20 @@
 div#grid-row{
     display: flex;
+    width: 512px;
 }
 
 div#grid-div {
     background-color: pink;
+}
+
+button#c-size {
+    width: 200px;
+    margin: 10px;
+}
+
+div#container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
 }
