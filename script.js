@@ -47,7 +47,7 @@ generateGrid(gridSize);
 
 function rollRandomNumber(max)
 {
-    return Math.floor(Math.random * max);
+    return Math.floor(Math.random() * max);
 }
 
 
@@ -80,7 +80,8 @@ wackadooModeBtn.addEventListener('click', func = () =>
             let g = rollRandomNumber(255);
             let b = rollRandomNumber(255);
 
-            console.log("hello");
+            let rgbString = `rgb(${r}, ${g}, ${b})`;
+            changePaintColor(tempDiv, rgbString);
 
 
         })
