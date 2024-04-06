@@ -102,3 +102,12 @@ normalModeBtn.addEventListener('click', func = () => {
         }
     }
 })
+
+const clearButton = document.querySelector("button#clear-button");
+
+clearButton.addEventListener('click', func = () => {
+    let gridBoxes = document.querySelectorAll("#grid-div");
+    gridBoxes.forEach(func = (gridBox) => {
+        gridBox.style.backgroundColor = "pink";
+    })
+})

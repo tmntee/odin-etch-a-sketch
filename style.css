@@ -18,3 +18,7 @@ div#container {
     align-items: center;
     flex-direction: column;
 }
+
+button#clear-button {
+    margin: 10px;
+}
