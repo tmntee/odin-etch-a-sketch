@@ -3,7 +3,6 @@ const grid = document.querySelector("div#grid");
 let gridWidth = 512;
 let gridSize = 16;
 
-
 function generateGrid(size)
 {   
     const gridRows = [];
@@ -39,7 +38,17 @@ function clearGrid()
     }
 }
 
+function changePaintColor(domObject, colorString)
+{
+    domObject.style.backgroundColor = colorString;
+}
+
 generateGrid(gridSize);
+
+function rollRandomNumber(max)
+{
+    return Math.floor(Math.random * max);
+}
 
 
 const cSizeButton = document.querySelector("button#c-size");
@@ -55,9 +64,23 @@ cSizeButton.addEventListener('click', func = () => {
     generateGrid(gridSize);
 })
 
-// last updated 4/3/2024 
-// coded button and working on onclick function for button,
-// need to delete grid and reload a grid with inputted number
-// IDEA: make a generate() function from grid generation at the beginning
-// that takes number parameter and call generate() in onClick function
+const wackadooModeBtn = document.querySelector("button#wackadoo");
 
+wackadooModeBtn.addEventListener('click', func = () => 
+{
+    for(let i = 0; i < grid.children.length; i++)
+    {
+        for (let j = 0; j < grid.children.item(i).length; j++)
+        {
+            let tempDiv = grid.children.item(i).children.item(j);
+            tempDiv.addEventListener('mouseover', func = () => 
+        {
+            let r = rollRandomNumber(255);
+            let g = rollRandomNumber(255);
+            let b = rollRandomNumber(255);
+
+            console.log("hello");
+        })
+        }
+    }
+})
